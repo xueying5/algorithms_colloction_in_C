@@ -1,5 +1,6 @@
 #include <stdio.h>
-#define N 3
+#include <stdlib.h>
+// #define N 3
 void hanoi(int n, char A, char B, char C) {
   if (n == 1)
   {
@@ -12,6 +13,15 @@ void hanoi(int n, char A, char B, char C) {
 }
 int main(int argc, char const *argv[])
 {
+  int N;
+  if (argc < 2)
+  {
+    printf("usage: hanoi n\n");
+    exit(EXIT_FAILURE);
+  }
+  N = atoi(argv[1]);
+  // printf("%d\n", N);
+  // return 0;
   hanoi(N, 'A', 'B', 'C');
   return 0;
 }
